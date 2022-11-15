@@ -1,0 +1,32 @@
+Data preprocessing health care and marketing.
+=====================
+Health care
+======================
+
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+data=pd.read_csv("/content/Patient_history_samp.csv") 
+data.head()
+data.tail()
+data.info()
+data.columns
+data['gender'].value_counts()
+Mappings={'F':'female','M':'male'} data['gender']=data['gender'].replace(Mappings) 
+data['gender'].value_counts().plot(kind='barh')
+
+=====================================================================================
+Marketing
+=====================================================================================
+
+import pandas as pd 
+import matplotlib.pyplot as plt 
+data= pd.read_csv("/content/Dummy Data.csv")
+data.head()
+data.tail()
+data.info()
+data.columns
+data["Influencer"].value_counts()
+data.drop("Influencer",axis=1)
+data['Influencer'].value_counts().plot(kind='pie')
+data.plot.scatter(x='Influencer',y='Sales',c='green')
